@@ -39,8 +39,8 @@ cat << 'EOF' > "$LIVING/04-hada.sh"
         echo "¡Gracias!"
         echo "¡Sé algo importante!"
         echo "$x" | base64 -d
-        echo "Deberias buscar en el contenido de los experimentos en el laboratorio!"
-	echo ""
+        echo ""
+        echo "Deberias BUSCAR en el CONTENIDO de los experimentos en el laboratorio!"
     fi
 EOF
 
@@ -51,7 +51,7 @@ cat << 'EOF' > "$LIVING/03-hada.sh"
     CANTIDAD=$(ls -1 "$DIR_ACTUAL"/*enemigo* 2>/dev/null | wc -l)
 
     if [ "$CANTIDAD" -gt 0 ]; then
-        echo "Quedan $CANTIDAD enemigos. ¡Debes eliminar los enemigos!"
+        echo "Quedan $CANTIDAD enemigos. ¡Debes ELIMINAR los enemigos!"
     else
         echo "¡Lo lograste! ^^"
     fi

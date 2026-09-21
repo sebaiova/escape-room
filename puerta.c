@@ -19,7 +19,7 @@ int main()
     else 
     {
         printf("ACCESO PERMITIDO.\n");
-        printf("Mision completada exitosamente.\n");
+        printf("¡Felicitaciones! Lograste escapar.\n");
     }
 
     return 0;
