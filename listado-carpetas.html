@@ -3,12 +3,255 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carpetas disponibles</title>
+<meta name="theme-color" content="#090d18">
+<title>Escape Room | Misión cumplida</title>
+<style>
+:root {
+    color-scheme: dark;
+    --bg: #090d18;
+    --panel: #111827;
+    --border: #253149;
+    --cyan: #55f6e0;
+    --violet: #a78bfa;
+    --muted: #91a0b8;
+    --text: #eef4ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 15% 0%, #17334b 0, transparent 38%),
+        radial-gradient(ellipse at 100% 35%, #28204a 0, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 36px 18px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font: 700 12px monospace;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin: 14px 0;
+}
+
+h1 span {
+    color: var(--cyan);
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 26px;
+    margin: 28px 0;
+    border: 1px solid #31505b;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #132b35, #17182d);
+    box-shadow: 0 12px 45px #0003;
+}
+
+.summary-label {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.count {
+    font-size: clamp(42px, 8vw, 64px);
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1.15;
+}
+
+.count span {
+    color: var(--cyan);
+}
+
+.trophy {
+    font-size: 44px;
+    filter: drop-shadow(0 0 15px #55f6e055);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 34px 0 14px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.badge {
+    color: var(--cyan);
+    border: 1px solid #285b59;
+    background: #12302f;
+    padding: 7px 10px;
+    border-radius: 100px;
+    font: 700 10px monospace;
+    letter-spacing: 1px;
+}
+
+.students {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 9px;
+}
+
+.student {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 18px;
+    min-width: 0;
+    border: 1px solid var(--border);
+    background: #111827dd;
+    border-radius: 12px;
+    transition: border-color .2s, transform .2s;
+}
+
+.student:hover {
+    border-color: #4b8d98;
+    transform: translateY(-1px);
+}
+
+.rank {
+    color: var(--violet);
+    font: 700 14px monospace;
+    min-width: 27px;
+}
+
+.student-name {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-weight: 650;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--cyan);
+    font: 700 10px monospace;
+    letter-spacing: .6px;
+    white-space: nowrap;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px #55f6e0;
+}
+
+.empty {
+    padding: 30px;
+    text-align: center;
+    color: var(--muted);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    line-height: 1.8;
+}
+
+footer {
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font: 12px monospace;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+footer span {
+    color: var(--cyan);
+}
+
+@media (max-width: 520px) {
+    body { padding: 25px 13px; }
+    .summary { padding: 20px; }
+    .student { padding: 15px 12px; gap: 10px; }
+    .status { font-size: 9px; }
+}
+</style>
 </head>
 <body>
-<h1>Carpetas disponibles</h1>
-<ul>
-<li>escape-room</li>
-</ul>
+<main class="container">
+    <header>
+        <div class="eyebrow">[ Linux Challenge / 2026 ]</div>
+        <h1>ESCAPE <span>ROOM</span></h1>
+        <p class="subtitle">
+            El desafío terminó. Estas son las personas que lograron
+            completar la misión.
+        </p>
+    </header>
+
+    <section class="summary">
+        <div>
+            <div class="summary-label">AGENTES CON MISIÓN CUMPLIDA</div>
+            <div class="count"><span>0</span></div>
+            <div class="summary-label">Exploradores que superaron el desafío</div>
+        </div>
+        <div class="trophy" aria-hidden="true">🏆</div>
+    </section>
+
+    <div class="section-heading">
+        <h2>Registro de finalistas</h2>
+        <span class="badge">● VERIFICADOS</span>
+    </div>
+
+    <ol class="students">
+        
+        <li class="empty">
+            Todavía no hay alumnos registrados.
+            <br>
+            La misión está esperando a sus primeros exploradores.
+        </li>
+        
+    </ol>
+
+    <footer>
+        <div>ESCAPE ROOM <span>_</span> FACULTAD</div>
+        <div>FIN DE TRANSMISIÓN // GG</div>
+    </footer>
+</main>
 </body>
 </html>
